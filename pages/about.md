@@ -3,8 +3,13 @@ layout: mypost
 title: 关于我
 ---
 
-> 欢迎访问 n1cef1sh's Blog
-> 
+> 欢迎访问 n1cef1sh's Blog  
+ 
+> OUC计算机研究生在读/SDUST本科软工  
+
+> 啥都不会的菜鸡，重新整理自己，努力耕耘  
+
+> 少说多做 XD
 
 
 
