@@ -1,10 +1,8 @@
 ---
 layout: post
 title: "Android JNI入门"
-date: 2018-07-31
-excerpt: "初步学习Android NDK开发，尝试用as编写so文件并在java层调用它"
-tags: [Android, JNI]
-comments: true
+categories: [Android, JNI]
+
 ---
 
 # 前言#

@@ -1,10 +1,8 @@
 ---
 layout: post
 title: "Feistel Cipher"
-date: 2018-10-14
-excerpt: "从护网杯的一道crpyto里学习一下Feistel Cipher"
-tags: [CTF, Crpyto]
-comments: true
+categories: [CTF, Crpyto]
+
 ---
 
 # 前言

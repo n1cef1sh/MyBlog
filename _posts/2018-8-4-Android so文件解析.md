@@ -1,10 +1,8 @@
 ---
 layout: post
 title: "Android so文件解析"
-date: 2018-08-04
-excerpt: "对Android so文件的初步学习和分析，为进一步理解和处理so文件打下基础"
-tags: [Android, ELF]
-comments: true
+categories: [Android, ELF]
+
 ---
 
 # About so#

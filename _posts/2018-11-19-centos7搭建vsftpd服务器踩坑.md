@@ -1,10 +1,8 @@
 ---
 layout: post
 title: "小白Centos搭建vsftpd服务器踩坑"
-date: 2018-11-19
-excerpt: "作为小白搭建vsftpd服务器的踩坑记录"
-tags: [Centos, vsftpd]
-comments: true
+categories: [Centos, vsftpd]
+
 ---
 
 # 前言
