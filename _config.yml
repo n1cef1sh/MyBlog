@@ -4,8 +4,8 @@ encoding: utf-8
 title: n1cef1sh's Blog
 description: n1cef1sh 的个人博客
 keywords: Blog
-author: TMaize
-footerText: 'Copyright © 2016 皖ICP备16016174号'
+author: nicefish
+footerText: 'Copyright © 2020 nicefish'
 
 # 这些不要动
 permalink: /posts/:year/:month/:day/:title.html
