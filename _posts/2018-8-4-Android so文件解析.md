@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android so文件解析"
-categories: [Android, ELF]
+categories: [Android]
 
 ---
 

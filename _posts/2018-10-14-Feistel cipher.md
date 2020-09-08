@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Feistel Cipher"
-categories: [CTF, Crpyto]
+categories: [Crpyto]
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android JNI入门"
-categories: [Android, JNI]
+categories: [Android]
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "小白Centos搭建vsftpd服务器踩坑"
-categories: [Centos, vsftpd]
+categories: [Centos]
 
 ---
 
