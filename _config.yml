@@ -54,12 +54,17 @@ extBaidu: true
 # 数学公式支持，比较影响加载速度,不需要请设置为false
 extMath: false
 
-#配置评论功能
-valine_comment:
+#Valine评论系统开关
+valine_comments:
     enable: true
     leancloud_appid: F6oYAOQ0i49VSLjrIqMROjXJ-gzGzoHsz
     leancloud_appkey: bSK0Qzjj9p0PPkWNYHEl3VdP
     placeholder: "Just go go"
+    avatar:   # gravatar style
+    guest_info: 昵称,邮件,网址 # custom comment header
+    pageSize: 10 # pagination size
+    recordIP: true # 是否记录评论者IP
+    enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
 
 # 友情链接
 links:
