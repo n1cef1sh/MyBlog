@@ -57,8 +57,8 @@ extMath: false
 #Valine评论系统开关
 valine_comments:
     enable: true
-    leancloud_appid: F6oYAOQ0i49VSLjrIqMROjXJ-gzGzoHsz
-    leancloud_appkey: bSK0Qzjj9p0PPkWNYHEl3VdP
+    leancloud_appid: TyycwmVygccDruMiF6w0XwNb-gzGzoHsz
+    leancloud_appkey: 63tegakam3VgktVHeLjcr5RG
     placeholder: "Just go go"
     avatar:   # gravatar style
     guest_info: 昵称,邮件,网址 # custom comment header
