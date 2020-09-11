@@ -54,6 +54,13 @@ extBaidu: true
 # 数学公式支持，比较影响加载速度,不需要请设置为false
 extMath: false
 
+#配置评论功能
+valine_comment:
+    enable: true
+    leancloud_appid: TyycwmVygccDruMiF6w0XwNb-gzGzoHsz
+    leancloud_appkey: 63tegakam3VgktVHeLjcr5RG
+    placeholder: "Just go go"
+
 # 友情链接
 links:
   - title: p0desta
