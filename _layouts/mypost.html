@@ -17,7 +17,9 @@
   </div>
   {% endif %}
 </div>
-{% include valine_comments.html -%}
+{% if site.valine_comment.enable %}
+    {% include valine_comments.html -%}
+{% endif %}
 {% include footer.html -%}
 {% include script.html -%}
 </body>
