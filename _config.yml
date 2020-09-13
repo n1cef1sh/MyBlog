@@ -62,8 +62,6 @@ valine:
   enable: true
   appid:  F6oYAOQ0i49VSLjrIqMROjXJ-gzGzoHsz # your leancloud app id
   appkey: bSK0Qzjj9p0PPkWNYHEl3VdP # your leancloud app key
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki，v1.4.0+ 已废弃
-  verify: false # Verification code，v1.4.0+ 已废弃
   placeholder: 在此处留言 # comment box placeholder
   avatar:   # gravatar style
   guest_info: 昵称,邮件,网址 # custom comment header
