@@ -1,19 +1,24 @@
-<br>
-   <!--Leancloud 操作库:-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valine - A simple comment system based on Leancloud.</title>
+    <!--Leancloud 操作库:-->
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
     <!--Valine 的核心代码库:-->
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-
-    <div id="comments"></div>
+    <script src="./dist/Valine.min.js"></script>
+</head>
+<body>
+    <div class="comment"></div>
     <script>
-         var valine = new Valine();
-         Valine.init({
-            av: AV,
-            el: '#comments',
-            app_id: '{{ site.valine.appid }}',
-            app_key: '{{ site.valine.appkey }}',
-            placeholder: '{{ site.valine.placeholder}}',
-	       recordIP: 'true',
-            
-         })
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '#comments', // 
+            app_id: '{{site.valine.appid }}', // 这里填写上面得到的APP ID
+            app_key: '{{site.valine.appkey  }}', // 这里填写上面得到的APP KEY
+            placeholder: '{{site.valine.placeholder  }}' // [v1.0.7 new]留言框占位提示文字
+        });
     </script>
+</body>
+</html>
