@@ -17,26 +17,11 @@
   </div>
   {% endif %}
 </div>
-{% if site.valine_comment.enable %}
-<div id="comments" style="height:300px;width:300px;columns: #ff0000;" ></div>
-<!--Leancloud 操作库:-->
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<!--Valine 的核心代码库:-->
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-   new Valine({
-       el: '#comments',
-       app_id: '{{ site.valine_comments.leancloud_appid}}',
-       app_key: '{{ site.valine_comments.leancloud_appkey}}',
-       placeholder:'{{ site.valine_comments.placeholder }}',
-       visitor: true,
-       notify: '{{site.valine.notify }}',
-       verify: '{{ site.valine.verify }}',
-       recordIP: 'true',
-       enableQQ: 'true',
-   });
-</script>
-{% endif %}
+	       <!-- Valine 评论框 start -->
+	       [% if site.valine.enable %]
+                      [% include valine_comments.html %]
+           [% endif %]
+	       <!-- Valine 评论框 end -->
 {% include footer.html -%}
 {% include script.html -%}
 </body>
