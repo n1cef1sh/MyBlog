@@ -18,7 +18,7 @@
   {% endif %}
 </div>
 {% if site.valine_comment.enable %}
-<div id="comments"></div>
+<div id="comments" style="height:300px;width:300px;columns: #ff0000;" ></div>
 <!--Leancloud 操作库:-->
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <!--Valine 的核心代码库:-->
@@ -32,7 +32,7 @@
        visitor: true,
        notify: '{{site.valine.notify }}',
        verify: '{{ site.valine.verify }}',
-     recordIP: 'true',
+       recordIP: 'true',
        enableQQ: 'true',
    });
 </script>
