@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-    <!--Leancloud 操作库:-->
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <!--Valine 的核心代码库:-->
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
 <html>
 {% include head.html -%}
 <body ondragstart="return false;">
@@ -20,13 +17,10 @@
     {% include ext-adsense.html -%}
   </div>
   {% endif %}
-  <div id="comments" style="height: 200px; color: brown;"></div>
 </div>
 
-<!-- Valine 评论框 start {% if site.valine.enable %}{% endif %}-->
-<div id="comments" style="height: 200px; color: brown;"></div>
-      {% include valine_comments.html -%}
-
+<!-- Valine 评论框 start -->
+{% include valine_comments.html -%}
 <!-- Valine 评论框 end -->
 {% include footer.html -%}
 {% include script.html -%}
