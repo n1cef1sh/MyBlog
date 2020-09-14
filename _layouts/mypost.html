@@ -5,13 +5,13 @@
 <body ondragstart="return false;">
 {% include header.html -%}
 <div class="page page-post">
-  <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
-  {% if page.date %}
-  <div class="subtitle">{{site.author}} 于 {{ page.date | date: "%Y-%m-%d" }} 发布</div>
-  {% endif %}
-  <div class="post">
-    {{ content }}
-  </div>
+    <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
+    {% if page.date %}
+    <div class="subtitle">{{site.author}} 于 {{ page.date | date: "%Y-%m-%d" }} 发布</div>
+    {% endif %}
+    <div class="post">
+         {{ content }}
+    </div>
   {% if site.extAdsense -%}
   <div class="adsense" style="overflow: hidden;">
     {% include ext-adsense.html -%}
@@ -19,10 +19,10 @@
   {% endif %}
 </div>
 
-{% include footer.html -%}
 <!-- Valine 评论框 start -->
 {% include valine_comments.html %}
 <!-- Valine 评论框 end -->
+{% include footer.html -%}
 {% include script.html -%}
 </body>
 </html>
