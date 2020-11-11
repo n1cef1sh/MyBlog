@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WEB SEC(ing)"
-categories: [websec]
+categories: [web]
 
 ---
 
