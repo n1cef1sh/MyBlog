@@ -54,20 +54,14 @@ extBaidu: true
 # 数学公式支持，比较影响加载速度,不需要请设置为false
 extMath: false
 
-# Valine评论系统开关
-# Valine.
-# You can get your appid and appkey from https://leancloud.app
-# more info please open https://valine.js.org
-valine:
-  enable: true
-  appid:  F6oYAOQ0i49VSLjrIqMROjXJ-gzGzoHsz # your leancloud app id
-  appkey: bSK0Qzjj9p0PPkWNYHEl3VdP # your leancloud app key
-  placeholder: 在此处留言 # comment box placeholder
-  avatar:   # gravatar style
-  guest_info: 昵称,邮件,网址 # custom comment header
-  pageSize: 10 # pagination size
-  # path: window.location.pathname #  v1.4.0+不要使用参数“app_key: 'LHvLGcwcauE5B2JpMxJ3lbtF',”
-  recordIP: true # 是否记录评论者IP
+# 插件
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
 
 
 # 友情链接
