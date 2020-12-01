@@ -45,3 +45,18 @@ The tag extends on line 51 in _posts/2020-11-30-flask-web学习.md is not a reco
 > Liquid has been in production use since June 2006 and is now used by many other hosted web applications.
 
 Liquid是一种开源模板语言，由 Shopify 创建，用 Ruby 编写，用于在网站加载动态内容。
+
+所以tag extends是个什么东西？
+
+![image.png](https://i.loli.net/2020/12/01/jwkmual7dRICisg.png)
+
+于是又重新把这几行给删掉，错误解决了……感觉很迷惑，之前我删的干干净净，只剩下标题和分类设置了，还在报错The tag extends on line 5 in _posts/2020-11-30-flask-web.md is not a recognized Liquid tag.结果现在又突然好了……  
+
+
+## 反思
+
+遇到问题不能上头，还是要从报错信息入手，多次尝试。这么一点小问题提交了几十次，方向越来越偏，还是回到最初的落脚点才解决掉，虽然还是不明白一开始删除为什么不可以。  
+
+还有就是涉及到html的代码展示时候，尽量不要引用，使用截图或者简要说明，防止出现稀奇古怪的问题和错误，真是又糟心又浪费时间啊。
+
+博客最重要的是记录学习和思考的过程，少做无用功。
