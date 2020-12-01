@@ -63,6 +63,7 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
+remote_theme: "mmistakes/minimal-mistakes@3.8.5"
 
 # 友情链接
 links:
