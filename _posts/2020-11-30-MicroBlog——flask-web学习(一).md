@@ -74,15 +74,9 @@ class Config(object):
 生成了一个隐藏字段，其中包含一个用于保护表单免受CSRF攻击的token
 {{ form.hidden_tag() }}
 ```
-模板中没有HTML表单元素，这是因为表单的字段对象的在渲染时会自动转化为HTML元素。 我只需在需要字段标签的地方加
-```
-{{ form.<field_name>.label }}
-```
-需要这个字段的地方加上
-
-```
-{{ form.<field_name>() }}
-```
+模板中没有HTML表单元素，这是因为表单的字段对象的在渲染时会自动转化为HTML元素。 我只需在需要字段标签的地方加![image.png](https://i.loli.net/2020/12/09/F4b7KeISiLB8jUx.png)
+需要这个字段的地方加上(size自定义)
+![image.png](https://i.loli.net/2020/12/09/3iy2KVCwFhGSN4J.png)
 
 ### 3、接收表单数据
 当用户在浏览器点击提交按钮后，浏览器会发送POST请求。form.validate_on_submit()就会获取到所有的数据，运行字段各自的验证器，全部通过之后就会返回True，这表示数据有效。  
@@ -99,6 +93,3 @@ url_for()的参数是endpoint名称，也就是视图函数的名字。
 > 为什么使用函数名称而不是URL？  
 事实是，URL比起视图函数名称变更的可能性更高。 后面会了解到的第二个原因是，一些URL中包含动态组件，手动生成这些URL需要连接多个元素，枯燥乏味且容易出错。 url_for()生成这种复杂的URL就方便许多。
 
-
-## 小结
-待建设
