@@ -1,3 +1,12 @@
+---
+layout: post
+title: "零碎的SpringBoot"
+categories: [SpringBoot]
+
+---
+
+## 
+
 ### 一些概念
 
 POJO
