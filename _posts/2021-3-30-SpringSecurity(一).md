@@ -5,8 +5,6 @@ categories: [SpringSecurity]
 
 ---
 
-## 
-
 Spring Security主要做两件事，一件是认证，一件是授权。
 
 ## 基本配置
