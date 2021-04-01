@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "关于SpringSecurity框架(一)"
+title: "SpringSecurity系列(一)"
 categories: [SpringSecurity]
 
 ---
 
 Spring Security主要做两件事，一件是认证，一件是授权。
+
+练习代码同步到github：SpringSecuritySamples/spring-security
 
 ## 基本配置
 
@@ -312,3 +314,10 @@ org/springframework/security/core/userdetails/jdbc/users.ddl
 ![image-20210401093619120](https://raw.githubusercontent.com/n1cef1sh/PhotoForBlog/main/img/image-20210401093619120.png)
 
 用户表里有个字段enabled，如果设置为false/0，就表示禁用该账户，无法再登录。
+
+## 参考
+
+[江南一点雨](http://itboyhub.com/category/springsecurity/)
+
+
+

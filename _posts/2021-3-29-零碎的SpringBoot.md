@@ -5,8 +5,6 @@ categories: [SpringBoot]
 
 ---
 
-## 
-
 ### 一些概念
 
 POJO
