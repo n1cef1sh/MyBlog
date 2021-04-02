@@ -3,7 +3,6 @@ layout: post
 title: "SpringSecurity系列(二)"
 categories: [SpringSecurity]
 
-
 ---
 
 ## 自动登录
@@ -229,3 +228,7 @@ public class HelloController{
 ```
 
 测试后符合预期。
+
+## 参考
+
+[江南一点雨](http://itboyhub.com/category/springsecurity/)
