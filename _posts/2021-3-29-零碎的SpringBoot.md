@@ -61,3 +61,19 @@ Java的序列化机制是通过在运行时判断类的serialVersionUID来验证
 
 攻击者可以使用这些错误消息来获取有关数据库的信息。
 
+
+
+### mybatis-plus驼峰命名
+
+数据库中的字段名要注意规范，为了方便最好不要用驼峰命名，类似phoneNumer这种改用下划线phone_number。因为在mybatis-plus将java实体类字段和数据库字段映射的时候，会自动把实体类命名里的驼峰转换成下划线，比如实体类里字段名叫phoneNumber，但是去数据库中找的是phone_number，如果起名不规范，就映射不到这个字段了。像是mybatis-plus里封装的.list()方法就不能直接正常使用了。
+
+当然也有补救方法，可以用@TableField指明这个字段在数据库中的字段名。
+
+```JAVA
+    @TableField("PhoneNumber")
+    @ApiModelProperty(value = "电话")
+    private String phoneNumber;
+```
+
+但是最好还是在设计数据库字段的时候，注意用下划线命名。
+

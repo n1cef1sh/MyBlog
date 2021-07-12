@@ -5,6 +5,8 @@ categories: [SpringSecurity]
 
 ---
 
+练习代码同步到github：SpringSecuritySamples/auto-login
+
 ## 自动登录
 
 顾名思义，就是用户登录成功以后，在一段时间里浏览器保存用户的登录状态，如果用户关闭了浏览器再重新打开，或者重启了服务器，都不需要用户再次输入密码进行登录，就可以直接自动登录直接访问接口。

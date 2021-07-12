@@ -5,6 +5,8 @@ categories: [SpringSecurity]
 
 ---
 
+练习代码同步到github：SpringSecuritySamples/verify_code
+
 ## 自定义认证逻辑——以验证码为例
 
 SpringSecurity框架的核心机制就是过滤器链，具体原理暂且不研究，只知大概和使用方法。
