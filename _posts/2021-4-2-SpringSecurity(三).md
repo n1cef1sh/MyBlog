@@ -142,9 +142,134 @@ public class MyAuthenticationProvider extends DaoAuthenticationProvider {
 
 
 
-## 关于登录用户详细信息
+## 2021-11-15更新
+
+### 关于登录用户详细信息
+
+Authentication 接口用来保存我们的登录用户信息，是对java.security.Principal的进一步封装。这里使用其中的 getDetails接口，查看有关身份认证的其他信息，默认存储的是用户登录的ip和sessionId。
+
+默认的配置是通过 WebAuthenticationDetailsSource 来构建 WebAuthenticationDetails，并将结果设置到 Authentication 的 details 属性中去。为了更方便的使用和拓展，可以自定义WebAuthenticationDetails实现功能。
+
+首先定义一个MyWebAuthenticationDetails继承WebAuthenticationDetails。在这里面对验证码进行判断。
+
+而拓展属性的话也在这里增加，然后从 HttpServletRequest 中提取出来设置给对应的属性即可。此处随便定义了一个test拓展属性用来测试。
+
+```JAVA
+    private boolean isPassed;
+	//拓展属性，测试用
+    private final String test;
+
+    public MyWebAuthenticationDetails(HttpServletRequest req) {
+        super(req);
+        this.test = req.getParameter("test");
+        String code = req.getParameter("code");
+        String verify_code = (String) req.getSession().getAttribute("verify_code");
+
+        if (code != null && verify_code != null && code.equals(verify_code)) {
+            isPassed = true;
+        }
+    }
+
+    public boolean isPassed() {
+        return isPassed;
+    }
+    public String getTest(){
+        return test;
+    }
+```
+
+然后在自定义的MyWebAuthenticationDetailsSource里构造MyWebAuthenticationDetails
+
+```JAVA
+@Component
+public class MyWebAuthenticationDetailsSource implements AuthenticationDetailsSource<HttpServletRequest,MyWebAuthenticationDetails> {
+    @Override
+    public MyWebAuthenticationDetails buildDetails(HttpServletRequest httpServletRequest) {
+        return new MyWebAuthenticationDetails(httpServletRequest);
+    }
+}
+```
+
+定义好之后，就可以在之前的MyAuthenticationProvider里进行调用判断了。
+
+```JAVA
+public class MyAuthenticationProvider extends DaoAuthenticationProvider {
+
+    @Override
+    protected void additionalAuthenticationChecks(UserDetails userDetails, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
+        if (!((MyWebAuthenticationDetails) authentication.getDetails()).isPassed()) {
+            throw new AuthenticationServiceException("验证码错误");
+        }
+        super.additionalAuthenticationChecks(userDetails, authentication);
+    }
+}
+```
+
+最后就是修改配置类，用自定义的MyWebAuthenticationDetailsSource 代替系统默认的WebAuthenticationDetailsSource。
+
+```JAVA
+@Autowired
+MyWebAuthenticationDetailsSource myWebAuthenticationDetailsSource;
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http.authorizeRequests()
+            ...
+            .and()
+            .formLogin()
+        	//新增了这行，配置了注入的myWebAuthenticationDetailsSource
+            .authenticationDetailsSource(myWebAuthenticationDetailsSource)
+            ...
+}
+```
+
+完成配置后，在service里去获取detail。之所以在service里操作，就是为了体现**随时随地**的特点。
+
+```JAVA
+@Service
+public class HelloService {
+    public void hello() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        MyWebAuthenticationDetails details = (MyWebAuthenticationDetails) authentication.getDetails();
+        System.out.println(details);
+    }
+}
+```
+
+最后在controller的接口里调用service，访问接口，查看控制台输入，打印了登录用户的ip和sessionid，但是没有打印出自己新加的拓展属性。
+
+![](https://raw.githubusercontent.com/n1cef1sh/PhotoForBlog/main/img/20211115102350.png)
 
 
+
+看了一下WebAuthenticationDetails的源码，问题出在这里。有一个默认的toString方法。
+
+```JAVA
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getClass().getSimpleName()).append(" [");
+        sb.append("RemoteIpAddress=").append(this.getRemoteAddress()).append(", ");
+        sb.append("SessionId=").append(this.getSessionId()).append("]");
+        return sb.toString();
+    }
+```
+
+所以只要在MyWebAuthenticationDetails里重写一下这个方法，把test加上就行了。
+
+```JAVA
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getClass().getSimpleName()).append(" [");
+        sb.append("RemoteIpAddress=").append(this.getRemoteAddress()).append(", ");
+        sb.append("SessionId=").append(this.getSessionId()).append(", ");
+        sb.append("Test=").append(this.getTest()).append("]");
+        return sb.toString();
+    }
+```
+
+再访问接口，查看控制台输出就可以了。
+
+![](https://raw.githubusercontent.com/n1cef1sh/PhotoForBlog/main/img/20211115111420.png)
 
 
 
