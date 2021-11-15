@@ -142,9 +142,7 @@ public class User implements UserDetails, CredentialsContainer {
 }
 ```
 
-那我们就在自定义的User类里重写hashcode和equals方法，建议右键generate根据配置自动生成，自己写也容易漏写或写错。
-
-![image-20211115193637860](C:\Users\pYq\AppData\Roaming\Typora\typora-user-images\image-20211115193637860.png)
+那我们就在自定义的User类里重写hashcode和equals方法
 
 ```JAVA
     @Override
@@ -152,12 +150,12 @@ public class User implements UserDetails, CredentialsContainer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return accountNonExpired == user.accountNonExpired && accountNonLocked == user.accountNonLocked && credentialsNonExpired == user.credentialsNonExpired && enabled == user.enabled && Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(roles, user.roles);
+        return Objects.equals(username, user.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, password, accountNonExpired, accountNonLocked, credentialsNonExpired, enabled, roles);
+        return Objects.hash(username);
     }
 ```
 
