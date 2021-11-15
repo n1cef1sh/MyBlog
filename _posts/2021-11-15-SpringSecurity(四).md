@@ -115,9 +115,7 @@ Spring Security 中通过 SessionRegistryImpl 类来实现对会话信息的统�
 
 那就是hashmap中如果**用对象做key**，需要注意什么？
 
-关于这个问题，单独做一篇学习记录。
-
-
+关于这个问题，单独做一篇学习记录：[Hashmap中用对象作为key的几点问题 | n1cef1sh’s Blog (nicefish.xyz)](https://www.nicefish.xyz/posts/2021/11/16/Hashmap中用对象作为key的几点问题.html)
 
 回到之前的问题，当使用基于内存的用户时，框架源码其实已经重写了这两个方法，所以不会出现问题。
 
